@@ -1,0 +1,33 @@
+<!--pages/busItem/bueItem.wxml-->
+<nav-bar navbar-data='{{nvabarData}}' bg-color="#EDEDED"></nav-bar>
+<view class='blank' style='margin-top: {{height}}px'>
+  <image src='../../imgs/station.png' class='stop-png'></image>
+  <text class='stop-text' space='nbsp'> {{stop}}</text>
+</view>
+<map longitude="{{lon}}" latitude='{{lat}}' class='map-view' show-location show-compass 
+markers='{{markers}}' include-points="{{points}}"></map>
+<block wx:for="{{busList}}" wx:key="index">
+  <view class='item'>
+    <view class='bus-desc'>
+      <text class='bus-code'>{{item.ServiceNo}}</text>
+      <!-- <text class='bus-tips'>{{stop}}</text> -->
+    </view>
+    <view class='other'>
+      <view class='other-tip'>
+        <text class='operator {{item.Operator == "SMRT" ? "red" : ""}}'>{{item.Operator}}</text>
+        <image src='../../imgs/help.png' class='feature' wx:if="{{ item.NextBus.Feature == 'WAB' }}"></image>
+      </view>
+      <view class='time'>
+          <text 
+          class='now {{item.NextBus.Load == "SDA" ? "yellow" : (item.NextBus.Load == "LSD" ? "red" : "")}}'>{{item.NextBus.EstimatedArrival}}</text>
+        <view class='next-wrapper'>
+          <text class='next'>{{item.NextBus2.EstimatedArrival}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='limit' wx:if="{{ index != busList.length }}"></view>
+</block>
+<view class='bottom-blank' wx:if="{{busList}}">
+  <text>下拉刷新获取实时动态</text>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navbar/navbar",
+    "guide": "/components/guide/guide"
+  },
+  "navigationBarTitleText": "新加坡实时汇率",
+  "navigationBarBackgroundColor": "#0066CC",
+  "navigationBarTextStyle": "white"
+}

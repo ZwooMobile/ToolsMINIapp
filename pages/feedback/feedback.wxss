@@ -1,0 +1,110 @@
+/* pages/feedback/feedback.wxss */
+page{
+  height: 100%;
+}
+
+.wrapper{
+  width: 92%;
+  left: 4%;
+  position: relative;
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.high{
+  height: 80%;
+  padding: 20rpx 100rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title{
+  font-size: 30rpx;
+  color: #303030;
+  font-weight: 600;
+  margin-top: 30rpx;
+}
+
+.question{
+  margin-top: 20rpx;
+  height: 180rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #4F4F4F;
+  background: #EDEDED;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.long{
+  width: 670rpx;
+}
+
+.email{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.tips{
+  font-size: 30rpx;
+  color: #666666;
+}
+
+.limit{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.send{
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  width: 100%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background: #33cc99;
+}
+
+.success-png{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.finish-btn{
+  font-size: 32rpx;
+  width: 70%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background: #009933;
+}
+
+.top{
+  margin-top: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-title{
+  margin-top: 50rpx;
+  font-size: 40rpx;
+  color: black;
+  font-weight: 500;
+}
+
+.words{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #4F4F4F;
+}

@@ -1,0 +1,13 @@
+<!--components/starLevel.wxml-->
+<view>
+  <image src='../../imgs/emptyStar.png' class='star' wx:if="{{level < 1}}"></image>
+  <image src='../../imgs/fullStar.png' class='star' wx:else="{{level >= 1}}"></image>
+  <image src='../../imgs/emptyStar.png' class='star' wx:if="{{level < 2}}"></image>
+  <image src='../../imgs/fullStar.png' class='star' wx:else="{{level >= 2}}"></image>
+  <image src='../../imgs/emptyStar.png' class='star' wx:if="{{level < 3}}"></image>
+  <image src='../../imgs/fullStar.png' class='star' wx:else="{{level >= 3}}"></image>
+  <image src='../../imgs/emptyStar.png' class='star' wx:if="{{level < 4}}"></image>
+  <image src='../../imgs/fullStar.png' class='star' wx:else="{{level >= 4}}"></image>
+  <image src='../../imgs/emptyStar.png' class='star' wx:if="{{level < 5}}"></image>
+  <image src='../../imgs/fullStar.png' class='star' wx:else="{{level >= 5}}"></image>
+</view>

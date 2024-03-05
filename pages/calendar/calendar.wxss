@@ -1,0 +1,1165 @@
+/* pages/calendar/calendar.wxss */
+@import "../../components/datePicker/datePicker.wxss";
+
+page{
+  height: 100%;
+}
+
+.full{
+  height: 100%;
+}
+
+.really{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin-left: 120px
+}
+.addmini {
+width:150px;
+height:28px;
+line-height:28px;
+
+text-align:center;
+background-color:gold;
+border-radius:13px;
+color:#333;
+font-size:16px
+}
+
+.bone_view{
+  margin: 10px 7px 10px;
+}
+.month_view_hd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    overflow-y: hidden;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.flex_row_stretch {
+    width: 10px;
+    flex: 1;
+}
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.date_month {
+    float: left;
+    height: 45px;
+    line-height: 50px;
+    font-size: 21px;
+    text-align: center;
+    color: #333;
+    margin-left: 15px;
+}
+
+.arrowIcon {
+    float: left;
+    width: 8px;
+    height: 5px;
+    margin-left: 6px;
+    margin-top: 22.5px;
+}
+
+.today_btn {
+    float: left;
+    text-align: center;
+    margin-left: 16px;
+}
+
+.today_inner {
+    margin: 14px 9px;
+    font-size: 13px;
+    line-height: 1;
+    padding: 4.5px;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #d03f3f;
+}
+
+.yjBtn {
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    top: 9px;
+    right: 15px;
+    text-align: center;
+    background-color: #f6f1e9;
+    border-radius: 13px;
+    color: #333;
+    font-size: 16px;
+}
+
+.yjList {
+    height: 50px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin-top: -10px;
+    opacity: 0;
+    background-color: #fff;
+    border-bottom: 0.5px solid #eaeaea;
+    transition: 0.3s ease opacity,0.3s ease margin-top;
+}
+
+.yjList.animate-slide-down {
+    margin-top: 40px;
+    opacity: 1;
+}
+
+.yjListInner {
+    background-color: #fff;
+}
+
+.yjSelect {
+    width: 56px;
+    height: 27px;
+    font-size: 16px;
+    line-height: 25px;
+    color: rgba(181,158,121,1);
+    margin-left: 10px;
+    background: rgba(251,248,243,1);
+    border-radius: 13px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    text-align: center;
+}
+
+.yjSelect.active {
+    border-color: #d03f3f;
+    color: #d03f3f;
+}
+
+.yjListInner .yjSelect:first-child {
+    margin-left: 0;
+}
+
+.month_view {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.week_view {
+    height: 10px;
+    margin: 14px auto 0;
+}
+
+.week_view_item {
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(51,51,51,0.8);
+}
+
+.week_view_item.weekend {
+    color: rgba(208,63,63,0.8);
+}
+
+.month_view_canvas,.singleShowMonthList {
+    position: absolute;
+    width: 100%;
+    height: 352px;
+    z-index: 100;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.singleShowMonthList {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.month_view_content {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 362px;
+}
+
+.slide_month_view {
+    float: left;
+    top: 60px;
+}
+
+.month_list {
+    position: relative;
+    overflow-y: hidden;
+    margin: 0 auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.month_item {
+    position: relative;
+    color: #000;
+    display: table;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.month_item.last,.month_item.next {
+    opacity: 0.3;
+}
+
+.month_item.today,.month_item.yi.today {
+    border-color: rgb(209,209,209);
+}
+
+.month_item.active,.month_item.yi.active {
+    border-color: #d03f3f;
+}
+
+.month_item.today.active {
+    border-color: #d03f3f;
+    background-color: #d03f3f;
+}
+
+.month_item.yi {
+    border-color: #f7f2e8;
+    background-color: #f7f2e8;
+}
+
+.month_item.weekind .day_num,.month_item.jieqi .day_lunar {
+    color: #d03f3f;
+}
+
+.day_wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.day_num {
+    font-size: 22px;
+    line-height: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.day_lunar {
+    font-size: 12px;
+    line-height: 1;
+    color: #333;
+    margin-top: 7px;
+    letter-spacing: 0;
+}
+
+.month_item.today.active .day_num,.month_item.today.active .day_lunar {
+    color: #fff;
+}
+
+.vacation_icon {
+    display: none;
+    position: absolute;
+    top: 0;
+ 
+    border-radius: 100%;
+    font-size: 8px;
+    line-height: 1;
+    padding: 1px;
+    text-align: center;
+    color: #fff;
+}
+
+.vacation_icon.ban,.vacation_icon.xiu,.vacation_icon.xin {
+    display: block;
+}
+
+.vacation_icon.ban {
+    background-color: #2b6fa9;
+   right: 0;
+}
+
+.vacation_icon.xiu {
+    background-color: #d03f3f;
+    right: 0;
+}
+.vacation_icon.xin {
+    background-color:  #e25c02;
+    left: 0;
+}
+
+.month_item.today.active .vacation_icon.ban {
+    background-color: #fff;
+    color: #2b6fa9;
+}
+
+.month_item.today.active .vacation_icon.xiu {
+    background-color: #fff;
+    color: #d03f3f;
+}
+
+.day_view {
+    margin: 5px 7px 0;
+    padding: 15px 13px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.day_detail_info {
+    margin-bottom: 10px;
+}
+
+.day_detail_num {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #f5f0e9;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 500;
+    text-align: center;
+    color: #f9b90e;
+    flex: none;
+}
+
+.lunar_day_info {
+    width: 100%;
+    height: 50px;
+    flex: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.lunar_day_detail {
+    font-size: 15px;
+    line-height: 15px;
+    color: #333;
+    margin-top: 6px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.lunar_date {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(51,51,51,0.9);
+    margin-top: 8px;
+    opacity: 0.9;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.day_detail_icon {
+    width: 7.8px;
+    height: 50px;
+    background-size: 20px 20px;
+}
+
+.festival_content {
+    height: 14px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-top: 0.5px solid #f6f6f6;
+    border-bottom: 0.5px solid #f6f6f6;
+}
+
+.festival_content_icon {
+    flex: none;
+    width: 21px;
+    height: 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #2ea9df;
+}
+
+.festival_detail {
+    height: 14px;
+    flex: auto;
+    opacity: 0.9;
+    font-size: 13px;
+    line-height: 14px;
+    color: rgba(51,51,51,0.9);
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-spacing: 6px;
+}
+
+.yi_content,.ji_content {
+    justify-content: flex-start;
+}
+
+.yi_content {
+    margin-bottom: 9px;
+}
+
+.yi_icon,.ji_icon {
+    flex: none;
+    width: 21px;
+    height: 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 14px;
+    margin: 1px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.yi_icon {
+    background-color: #d03f3f;
+}
+
+.ji_icon {
+    background-color: #529671;
+}
+
+.yi_detail,.ji_detail {
+    flex: auto;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: left;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.yi_detail {
+    color: #d03f3f;
+}
+
+.ji_detail {
+    color: #529671;
+}
+
+.loadingBG {
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+    background-color: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.loadingBGBanner {
+    margin: auto;
+}
+
+.loading {
+    width: 24px;
+    height: 24px;
+    animation: roll 1s ease infinite;
+}
+
+@-webkit-keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    71.5% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    71.5% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.weather_view {
+    margin: 10px 7px 10px;
+    background-color: #fff;
+    padding: 15px 0;
+    font-family: -apple-system,"苹方-简","Helvetica Neue","Helvetica","STHeitiSC-Light","Arial",sans-serif;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    min-height: 109.5px;
+    display: flex;
+    justify-content: center;
+}
+
+.weather_cur {
+    width: 100%;
+    position: relative;
+    min-height: 46px;
+    padding-bottom: 22rpx;
+}
+
+.weather_cur_tp {
+    height: 46px;
+    font-size: 58px;
+    line-height: 46px;
+    font-weight: 200;
+    color: #34a8d9;
+    float: left;
+    min-width: 80px;
+    margin-left: 13px;
+}
+
+.weather_cur_ct1 {
+    float: left;
+    height: 46px;
+    position: relative;
+    min-width: 150px;
+}
+
+.weather_cur_ct1_left {
+    float: left;
+    position: relative;
+    height: 100%;
+    min-width: 50px;
+}
+
+.weather_cur_ct1_right {
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+.weather_cur_cd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 50px;
+}
+
+.weather_cur_left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.weather_cur_lh {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 50px;
+    white-space: nowrap;
+}
+
+.weather_cur_ct2 {
+    height: 46px;
+    color: #777;
+    float: right;
+    margin-right: 13px;
+}
+
+.weather_cur_rh {
+    text-align: right;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 22rpx;
+    width: 125px;
+    padding-right: 13px;
+    white-space: nowrap;
+}
+
+.weatherAddr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 13px;
+}
+
+.weather_cur_c {
+    text-align: right;
+    width: 260rpx;
+    margin-right: 5px;
+}
+
+/* .city_switch {
+    width: 20rpx;
+    height: 17rpx;
+    background-image: url('https://mobile.51wnl.com/wxapp_resource/wxapp_wnl/weather-change-icon.png');
+    background-size: 100% 100%;
+} */
+
+.weather_cur_pm {
+    font-size: 12px;
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    padding: 1px 2px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px;
+    min-width: 50px;
+}
+
+.weather_cur_d {
+    position: absolute;
+    top: -15px;
+    right: 13px;
+    width: 52px;
+    padding: 0.5px 0px;
+    text-align: right;
+    font-size: 10px;
+    background-color: #999;
+    color: #fff;
+    border-radius: 0px 2px 0px 6px;
+}
+
+.weather_th_icon {
+    text-align: right;
+}
+
+.weather_th_icon image {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.weatherSplitLine {
+    margin: 0 30rpx;
+    height: 1px;
+    background-color: #eaeaea;
+}
+
+.weather_bottom {
+    width: 100%;
+    float: left;
+    padding-top: 26rpx;
+    position: relative;
+    padding: 26rpx 13px 0 13px;
+    box-sizing: border-box;
+}
+
+.weather_two {
+    width: 100%;
+    height: 100%;
+}
+
+.weather_tom {
+    float: left;
+    height: 40px;
+    width: 46%;
+}
+
+.weather_two_split {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: #eaeaea;
+    left: 50%;
+    top: 26rpx;
+}
+
+.weather_hou {
+    float: right;
+    height: 40px;
+    width: 46%;
+}
+
+.weather_th_ct1 {
+    float: left;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather_th_ct2 {
+    float: right;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather_th_lh,.weather_th_pm,.weather_th_cd {
+    color: #777;
+}
+
+.weather_th_pm,.weather_th_cd {
+    display: flex;
+    align-items: center;
+}
+
+.weather_th_pm view:last-child {
+    display: inline-block;
+    padding-left: 5px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.color_border {
+    display: inline-block;
+    width: 3px;
+    height: 13px;
+    border-radius: 1.5px;
+    background-color: #d97127;
+}
+
+.astro_view {
+    margin: 0 7px;
+    background: #fff url(-do-not-use-local-path-./pages/index/index.wxss&791&14) no-repeat center top;
+    background-size: 100% 117px;
+    padding: 15px 13px;
+    font-size: 15px;
+    color: #fff;
+    min-height: 153px;
+    position: relative;
+}
+
+.astroLaoding {
+    margin: auto auto;
+    margin-top: 66.5px;
+}
+
+.astro_top_content {
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.astro_tip_list {
+    width: 94px;
+    min-width: 67px;
+    line-height: 15px;
+}
+
+.astro_tip_item,.astro_num_item {
+    margin-top: 9px;
+}
+
+.astro_tip_item:first-child,.astro_num_item:first-child {
+    margin-top: 0;
+}
+
+.astro_num_list {
+    flex: none;
+    position: absolute;
+    left: 94px;
+    top: 0px;
+}
+
+.astro_num_item {
+    line-height: 15px;
+    justify-content: flex-start;
+}
+
+/* .astr_star {
+    width: 14px;
+    height: 13px;
+    margin-right: 1px;
+    background-image: url('https://www.51wnl.com/wxapp_resource/wnl/star.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px 13px;
+}
+
+.astr_star.active {
+    background-image: url('https://www.51wnl.com/wxapp_resource/wnl/star_active.png');
+} */
+
+.astro_change_icon {
+    position: relative;
+    width: 42px;
+    min-width: 32px;
+    height: 79px;
+    background-size: 9px 6px;
+}
+
+.astro_right_more {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* .picker_holder {
+    text-align: right;
+    line-height: 15px;
+    box-sizing: border-box;
+    padding-right: 14px;
+    background: url('https://www.51wnl.com/wxapp_resource/wnl/astro_change_icon@2x.png') right 4.5px no-repeat;
+    background-size: 9px 6px;
+} */
+
+.astro_pick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    z-index: 99;
+}
+
+.astro_detail {
+    margin-top: 10px;
+    width: 59px;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+}
+
+.astro_detail image {
+    width: 50px;
+    height: 50px;
+}
+
+.astro_name {
+    line-height: 28px;
+    color: #ec7b79;
+    margin-top: 13.5px;
+}
+
+.astro_date {
+    font-weight: 300;
+    line-height: 11px;
+    text-align: center;
+    color: #ec7b79;
+    margin-top: 10px;
+}
+
+.astro_desc {
+    line-height: 1.5;
+    text-align: justify;
+    color: #777;
+}
+
+.banner_view {
+    margin: 0 7px 10px 7px;
+    background-color: #fff;
+    padding: 15px 13px;
+    font-family: -apple-system,"苹方-简","Helvetica Neue","Helvetica","STHeitiSC-Light","Arial",sans-serif;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    min-height: 109.5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+}
+
+.banner_header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header_title {
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    color: #777;
+}
+
+.header_fold {
+    font-size: 14px;
+    line-height: 1;
+    text-align: right;
+    color: #777;
+}
+
+.banner_content {
+    display: flex;
+    margin-top: 21px;
+    align-items: center;
+}
+
+.banner_itemList {
+    transition: all 2s ease-in-out;
+}
+
+.banner_itemList_hide {
+    display: none;
+}
+
+.banner_itemList_show {
+    display: block;
+}
+
+.banner_topItemIcon {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
+
+.banner_topItemIcon image,.banner_itemIcon image {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.banner_topItemMiddle {
+    display: flex;
+    margin-left: 20rpx;
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+.banner_topItemTitle {
+    font-size: 17px;
+    line-height: 1;
+    text-align: left;
+    color: #333;
+    margin-top: 19rpx;
+}
+
+.banner_topItemDesc {
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: justify;
+    color: #999;
+    width: 250rpx;
+    margin-top: 8px;
+}
+
+.banner_link {
+    width: 140rpx;
+    height: 54rpx;
+    border-radius: 100px;
+    background-color: #f9b90e;
+    margin-left: 92rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_linkInner {
+    width: 130rpx;
+    height: 44rpx;
+    font-size: 12px;
+    line-height: 44rpx;
+    text-align: center;
+    color: #fff;
+    border-radius: 100rpx;
+    border: solid 1px #fff;
+    box-sizing: border-box;
+}
+
+.banner_row {
+    display: flex;
+    justify-content: space-between;
+    margin: 30rpx 0 0 0;
+    border-top: 1px solid #eaeaea;
+    padding-top: 30rpx;
+    width: 100%;
+}
+
+.itemList_topLine {
+    margin: 20rpx 0 0 0;
+    height: 1px;
+    background-color: #eaeaea;
+}
+
+.banner_item {
+    width: 130rpx;
+    height: 140rpx;
+}
+
+.banner_itemIcon {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.banner_itemName {
+    font-size: 14px;
+    line-height: 28rpx;
+    text-align: center;
+    color: #333;
+    margin-top: 20rpx;
+    height: 28rpx;
+}
+
+.banner_rowInline {
+    display: inline-block;
+}
+
+.banner_rowInline .banner_item {
+    display: inline-block;
+    margin-right: 50rpx;
+}
+
+.mryy_view {
+    margin: 10px 7px;
+    background-color: #fff;
+    padding: 15px 13px 10px;
+}
+
+.mryy_title {
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    color: #777;
+}
+
+.mryy_img {
+    width: 100%;
+    height: 190px;
+    margin-top: 10px;
+}
+
+.mryy_txt_wraper {
+    margin: 12px auto 2px auto;
+    text-align: left;
+}
+
+.yy_txt {
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.mryy_inner_txt {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.53;
+    text-align: justify;
+    color: #777;
+}
+
+.yy_txt.multiple_line {
+    bottom: 25px;
+}
+
+@media only screen and (max-device-width:360px),screen and (max-width:360px) {
+    .today_btn {
+        right: 49px;
+    }
+
+    .day_lunar {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+}
+
+@media only screen and (max-device-width:320px),screen and (max-width:320px) {
+    .today_btn {
+        right: 39px;
+    }
+
+    .astro_view,.day_view,.mryy_view {
+        padding: 12px 10px;
+    }
+
+    .lunar_day_detail {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .lunar_date {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .day_lunar {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+
+    .weather_cur_pm {
+        top: 3px;
+        right: -56px;
+    }
+
+    .banner_topItemDesc {
+        font-size: 13px;
+    }
+
+    .banner_itemName {
+        font-size: 12px;
+    }
+
+    .weather_cur_tp {
+        min-width: 60px;
+        font-size: 40px;
+    }
+
+    .weather_cur_c {
+        padding-top: 0!important;
+        margin-left: 6rpx;
+    }
+
+    .weather_cur_pm {
+        right: -46px;
+        padding: 0 4rpx;
+    }
+}
+
+@media only screen and (max-device-width:414px),screen and (max-width:414px) {
+    .weather_cur_pm {
+    }
+}
+
+@media only screen and (max-device-width:375px),screen and (max-width:375px) {
+    .weather_cur_pm {
+    }
+}
+
+@media only screen and (max-device-width:360px),screen and (max-width:360px) {
+    .weather_cur_pm {
+    }
+}
+
+
+.bottom_btn{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #eee
+}
+.tab_img{
+  width: 28px;
+  height: 28px
+}
+.align{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}

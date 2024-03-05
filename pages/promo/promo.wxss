@@ -1,0 +1,20 @@
+/* pages/promo/promo.wxss */
+.content{
+  margin-top: 50rpx;
+  width:700rpx;
+  height: 600rpx;
+  border: 1rpx solid #eee;
+  position:relative;
+}
+.time{
+  font-size:30rpx;
+  color:grey;
+  position: absolute;
+  bottom: 15rpx;
+  right:15rpx;
+}
+
+.blank{
+  width: 100%;
+  height: 60rpx;
+}

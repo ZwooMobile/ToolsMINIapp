@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navbar/navbar",
+    "guide": "/components/guide/guide"
+  },
+  "navigationBarBackgroundColor": "#0066CC",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "新加坡MRT"
+}

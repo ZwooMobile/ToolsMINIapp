@@ -1,0 +1,39 @@
+<!--pages/bus/bus.wxml-->
+<view class='loading' wx:if="{{loading}}">
+  <image src='../../imgs/loading2.gif' class='load-img'></image> 
+</view>
+<block wx:else>
+  <guide></guide> 
+  <nav-bar navbar-data='{{nvabarData}}' bg-color="#fff"></nav-bar>
+  <view style='margin-top: {{height}}px'>
+    <view class='header'>
+      <view class='search'>
+        <image src='../../imgs/search.png' class='search-img'></image>
+        <view class='limit'></view>
+        <input placeholder='search' placeholder-class='search-tip' class='search-input' bindinput='search'></input>
+      </view>
+    </view>
+    <view class='tips-wrapper'>
+      <text class='title-text'>您附近的车站</text>
+    </view>
+    <view class='list' wx:for="{{roadList}}" wx:key="roadIndex" wx:for-item="roadItem" wx:for-index="roadIndex">
+      <view class='station'>
+        {{roadItem.RoadName}}
+      </view>
+      <view class='buses' data-id="{{item.BusStopCode}}" 
+      bindtap='getDetail' data-stop="{{item.Description}}"
+      data-point="{{item.Latitude + '-' + item.Longitude}}"
+      wx:for="{{roadItem.station}}" wx:key="BusStopCode" wx:for-item="item" wx:for-index="index">
+        <view class='bus'>
+          <text>{{item.Description}}</text>
+          <text class='code'>{{item.BusStopCode}}</text>
+        </view>
+        <view class='dis'>
+          <image src='../../imgs/distance.png' class='dis-png'></image>
+          <text class='dis-num'>{{item.distance}}km</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+

@@ -1,0 +1,40 @@
+/* pages/visa/visa.wxss */
+.tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 15rpx;
+  background: rgb(216, 94, 94);
+}
+.title{
+  padding: 15rpx;
+  color:white;
+  font-weight: bold;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid white;
+  text-align: center
+}
+.greytitle{
+  padding: 15rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: white;
+  text-align: center
+}
+.content{
+  width: 750rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+}
+.smtitle{
+  padding: 15rpx;
+  color:rgb(216, 94, 94);
+  text-align: left;
+  width: 720rpx;
+}
+.intro{
+  padding: 15rpx;
+}
+.text-bold{
+  font-weight: bold
+}

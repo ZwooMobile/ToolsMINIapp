@@ -1,0 +1,188 @@
+<nav-bar navbar-data='{{navbarData}}' bg-color="#F8F8FF"></nav-bar>
+<guide></guide>
+<view class='bg' wx:if="{{name}}">
+  <view class='header' style="margin-top:{{height}}px">
+    <view class='logo'>
+      <image src='../../imgs/constellation/{{imgUrl}}.png' class='logo-png'></image>
+      <text class='logo-text'>{{name}}</text>
+    </view>
+    <canvas canvas-id='all' class='canvas' hidden="{{activeIndex == 3 || activeIndex == 4 || activeIndex == 5}}"></canvas>
+  </view>
+  <view class="tab_list">
+      <view bindtap="tabItemTap" class="tab_item {{activeIndex == 1 ? 'active' : ''}}" data-index="1">
+          <view class="tab_item_inner">今日</view>
+      </view>
+      <view bindtap="tabItemTap" class="tab_item {{activeIndex == 2 ? 'active' : ''}}" data-index="2">
+          <view class="tab_item_inner">明日</view>
+      </view>
+      <view bindtap="tabItemTap" class="tab_item {{activeIndex == 3 ? 'active' : ''}}" data-index="3">
+          <view class="tab_item_inner">本周</view>
+      </view>
+      <view bindtap="tabItemTap" class="tab_item {{activeIndex == 4 ? 'active' : ''}}" data-index="4">
+          <view class="tab_item_inner">本月</view>
+      </view>
+      <view bindtap="tabItemTap" class="tab_item {{activeIndex == 5 ? 'active' : ''}}" data-index="5">
+          <view class="tab_item_inner">年度</view>
+      </view>
+  </view>
+  <view class='date' bindtap='choiceStar'>
+    <text>我\n的\n星\n座</text>
+    <image src='../../imgs/date.png' class='birth'></image>
+  </view>
+  <view class='content' wx:if="{{activeIndex == 1 || activeIndex == 2}}">
+    <view class='date-wrapper'>
+      <text>{{sourceData[activeIndex - 1].date}}</text>
+    </view>
+    <view class='option'>
+      <text class='option-title'>幸运色：</text>
+      <text class='option-ans' space='nbsp'>  {{sourceData[activeIndex - 1].color}}</text>
+    </view>
+    <view class='option'>
+      <text class='option-title'>幸运数字：</text>
+      <text class='option-ans' space='nbsp'> {{sourceData[activeIndex - 1].number}}</text>
+    </view>
+    <view class='option'>
+      <text class='option-title'>健康指数：</text>
+      <star-level level="{{sourceData[activeIndex - 1].health}}"></star-level>
+    </view>
+    <view class='option'>
+      <text class='option-title'>爱情指数：</text>
+      <star-level level="{{sourceData[activeIndex - 1].love}}"></star-level>
+    </view>
+    <view class='option'>
+      <text class='option-title'>财运指数：</text>
+      <star-level level="{{sourceData[activeIndex - 1].work}}"></star-level>
+    </view>
+    <view class='option'>
+      <text class='option-title'>速配星座：</text>
+      <text class='option-ans'>{{sourceData[activeIndex - 1].Qfriend}}</text>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>总结概述：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].summary ? sourceData[activeIndex - 1].summary : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view style='height:100rpx' wx:if="{{activeIndex == 2}}"></view>
+    <view class='footer' wx:else>
+      <image src='../../imgs/code.jpg' class='code'></image>
+      <text class='code-text'>长按识别小程序，查看今日运势~</text>
+    </view>
+  </view>
+  <view class='content' wx:elif="{{activeIndex == 3 || activeIndex == 4}}">
+    <view class='date-wrapper'>
+      <text>{{sourceData[activeIndex - 1].date}}</text>
+    </view>
+    <view class='option' wx:if="{{activeIndex == 3}}">
+      <text class='option-title'>综合指数：</text>
+      <star-level level="{{sourceData[activeIndex - 1].all}}"></star-level>
+    </view>
+    <view class='option-desc' wx:else>
+      <view class='title-wrapper'>
+        <text class='option-title'>总结：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].all ? sourceData[activeIndex - 1].all : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>健康：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].heath ? sourceData[activeIndex - 1].heath : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>求职：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].job ? sourceData[activeIndex - 1].job : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>恋情：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].love ? sourceData[activeIndex - 1].love : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>财运：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].money ? sourceData[activeIndex - 1].money : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>工作：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[activeIndex - 1].work ? sourceData[activeIndex - 1].work : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view style='height:100rpx'></view>
+  </view>
+  <view class='content' wx:else>
+    <view class='date-wrapper'>
+      <text>{{sourceData[4].date}}</text>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>简介：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[4].mimaInfo ? sourceData[4].mimaInfo : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>说明：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[4].mimaText ? sourceData[4].mimaText : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>事业运：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[4].work ? sourceData[4].work : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view class='option-desc'>
+      <view class='title-wrapper'>
+        <text class='option-title'>感情运：</text>
+      </view>
+      <view class='desc'>
+        <text space='nbsp'>   {{sourceData[4].love ? sourceData[4].love : '暂无概述'}}
+        </text>
+      </view>
+    </view>
+    <view style='height:100rpx'></view>
+  </view>
+</view>
+<view class='tips-view' wx:else>
+  <view class='tips-wrapper'>
+    <image src='../../imgs/girl.png' class='tips-png'></image>
+    <text class='tips-text'>提示： 请先设置好您的个人出生日期系统才可统计您的星座运势哦~</text>
+    <button class='tips-btn' bindtap='choiceStar'>去设置</button>
+  </view>
+</view> 

@@ -1,0 +1,68 @@
+/* pages/allStar/allStar.wxss */
+.allStar{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.star-item{
+  width: 300rpx;
+  padding: 20rpx 10rpx;
+  background: #F8F8FF;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10rpx;
+  align-items: center;
+  border:solid 1px #F4F4F4;
+  margin-top:20rpx;
+}
+
+.limit{
+  margin-left: 40rpx;
+}
+
+.light{
+  background: #ccccff;
+}
+
+.star-png{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.star-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.star-text{
+  font-size: 34rpx;
+  color: #6666cc;
+  font-weight: 500;
+}
+
+.star-date{
+  font-size: 30rpx;
+  font-family: consolas;
+  margin-top: 10rpx;
+  color: #6666cc;
+}
+
+.save{
+  position: fixed;
+  bottom: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 80%;
+  left: 10%;
+  background: #6666cc;
+  color: white;
+  font-size: 32rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navbar/navbar",
+    "guide": "/components/guide/guide"
+  },
+  "navigationBarTitleText": "实时关口交通图"
+}

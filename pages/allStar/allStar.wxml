@@ -1,0 +1,13 @@
+<!--pages/allStar/allStar.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#fff"></nav-bar>
+<view class='allStar' style='margin-top:{{height}}px'>
+  <view class='star-item {{index%2 == 1 ? "limit" : ""}} {{myStar == item.title ? "light" : ""}}' wx:for="{{starData}}" wx:key="index" bindtap='selectStar' data-id="{{item.title}}">
+    <image src='../../imgs/constellation/{{item.icon}}.png' class='star-png'></image>
+    <view class='star-wrapper'>
+      <text class='star-text'>{{item.title}}</text>
+      <text class='star-date'>{{item.date}}</text>
+    </view>
+  </view>
+</view>
+<button class='save' bindtap='save'>确定</button>
+<view style='height: 160rpx'></view>

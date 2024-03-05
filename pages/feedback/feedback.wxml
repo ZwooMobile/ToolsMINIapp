@@ -1,0 +1,19 @@
+<!--pages/feedback/feedback.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#fff"></nav-bar>
+<view class='wrapper' style='margin-top: {{height}}px' wx:if="{{!showModal}}">
+  <text class='title'>您的问题或建议：</text>
+  <textarea class='question long' placeholder='请输入个人意见反馈' placeholder-class='tips' bindinput='qtChange'></textarea>
+  <text class='title'>您的联系方式：</text>
+  <input placeholder='请输入电子邮箱' placeholder-class='tips' class='question email' bindinput='emailChange' 
+  value='{{value}}'></input>
+  <text class='tips limit'>留下您的联系方式，以便我们了解问题后及时反馈结果。</text>
+  <button class='send' bindtap='send'>提交问题</button>
+</view>
+<view class='wrapper high' wx:else  style='margin-top: {{height}}px'>
+  <view class='top'>
+    <image src='../../imgs/success.png' class='success-png'></image> 
+    <text class='logo-title'>提交成功</text>
+    <text class='words'>感谢您给我们反馈的意见或建议</text>
+  </view>
+  <button class='finish-btn' bindtap='confirm'>完成</button>
+</view>

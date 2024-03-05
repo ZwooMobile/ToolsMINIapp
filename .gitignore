@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/storage/framework
+/storage/logs
+gulpfile.js
+Homestead.yaml
+Homestead.json
+.env
+.idea/

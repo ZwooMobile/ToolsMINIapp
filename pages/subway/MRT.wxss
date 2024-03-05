@@ -1,0 +1,51 @@
+/* pages/subway/MRT.wxss */
+.inputList{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0066CC;
+  color: white;
+  width: 100%;
+  position: relative;
+  height: 320rpx;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15rpx;
+  margin-bottom: 30rpx;
+  background: rgb(90, 166, 241);
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  width:550rpx;
+}
+.change{
+  position: absolute;
+  right: 25rpx;
+  top:80rpx;
+  width:50rpx;
+}
+.rowLine{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 720rpx;
+  padding: 15rpx;
+}
+.routeList{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 720rpx;
+  padding: 15rpx;
+}
+.colLine{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

@@ -1,0 +1,51 @@
+/* pages/exchange/exchange.wxss */
+.heads{
+  width: 750rpx;
+  height: 300rpx;
+  background: #0066CC;
+  text-align: center;
+  line-height: 300rpx;
+  color: #fff;
+  font-size:30px;
+}
+.line{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 700rpx;
+  padding: 25rpx;
+}
+
+.input-bg{
+  background: #EDEDED;
+  border-radius: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.canvas_view {
+    margin: 10px 7px 10px;
+    background-color: #fff;
+    font-family: -apple-system,"苹方-简","Helvetica Neue","Helvetica","STHeitiSC-Light","Arial",sans-serif;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    min-height: 109.5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:10px;
+}
+.canvas {
+    width: 640px;
+    height: 600px;
+    transform: scale(0.5);   
+}
+
+.tips{
+  margin-top: 50rpx;
+  font-size: 25rpx;
+  color: #4F4F4F;
+  font-weight: 500;
+}

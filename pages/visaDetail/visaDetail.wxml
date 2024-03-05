@@ -1,0 +1,2 @@
+<!--pages/visaDetail/visaDetail.wxml-->
+<web-view src='{{url}}'></web-view>

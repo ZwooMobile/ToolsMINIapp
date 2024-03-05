@@ -1,0 +1,145 @@
+<!--pages/visa/visa.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="rgb(216, 94, 94)" text-color="white" theme='w'></nav-bar>
+<view  style='margin-top:{{height}}px' class='tab'>
+  <view class='{{choose==0?"title":"greytitle"}}' bindtap='choose' data-id='0'>签证类型</view>
+  <view class='{{choose==1?"title":"greytitle"}}' bindtap='choose' data-id='1'>签证材料</view>
+  <view class='{{choose==2?"title":"greytitle"}}' bindtap='choose' data-id='2'>快捷办理</view>
+  <view class='{{choose==3?"title":"greytitle"}}' bindtap='choose' data-id='3'>影响因素</view>
+</view>
+<view class='container'>
+  <block wx:if='{{choose==0}}'>
+    <view class='content'>
+      <text class='smtitle'>一.旅游/商务签证</text>
+      <view class='intro'>
+        <text>适用于前往新加坡旅游或者进行短期商务活动目的的人士申请，</text>
+        <text class='text-bold'>其有效期、入境次数都是由新加坡使馆决定的。</text>
+      </view>
+      <view class='intro'>
+        <text>常见的组合为35天单次或多次、63天单次或多次、半年单次或多次、一年单次或多次，两年单次或多次。</text>
+      </view>
+      <text class='smtitle'>二.入境签证</text>
+      <view class='intro'>
+        <text>新加坡入境签证适用于以下条件的人士：</text>
+      </view>
+      <view class='intro'>
+        <text>a.已获得新加坡移民与关卡局批准</text>
+        <text class='text-bold'>新加坡永久居民通知书</text>
+        <text>的人士；</text>
+      </view>
+
+      <view class='intro'>
+        <text>b.原则上已经新加坡移民与关卡局或新加坡人力部批准</text>
+        <text class='text-bold'>即将发给各类准证的人士</text>
+        <text>。如工作许可证，受雇准证，学生准证，长期社交访问准证；</text>
+      </view>
+
+      <view class='intro'>
+        <text>c.在中国</text>
+        <text class='text-bold'>遗失新加坡</text>
+        <text>工作许可证，受雇准证和学生</text>
+        <text class='text-bold'>准证的人士。</text>
+      </view>
+      <text class='smtitle'>三.过境签</text>
+      <view class='intro'>
+        <text>新加坡过境签全称新加坡</text>
+        <text class='text-bold'>96小时免签证转机服务</text>
+        <text>(Visa Free Transit Facilities, 即VFTF)，其产生的原因在于：澳大利亚印度尼西亚等周边国家希望从来新加坡的游客里吸引客人。</text>
+      </view>
+      <view class='intro'>
+        <text  class='text-bold'>符合以下条件</text>
+        <text>的中国公民可申请 96 小时免签证转机服务(VFTF)：</text>
+      </view>
+      <view class='intro'>
+        <text>1.</text>
+        <text  class='text-bold'>转机</text>
+        <text>飞往其他国家或从其他国飞抵新加坡转机时；</text>
+      </view>
+
+      <view class='intro'>
+        <text>2.持有96小时内离境的</text>
+        <text class='text-bold'>有效续程机票；</text>
+      </view>
+      <view class='intro'>
+        <text>3.</text>
+        <text class='text-bold'>持有以下国家签发的有效签证/长期签证</text>
+        <text>(有效期至少为 1 个月)：澳大利亚/加拿大/日本/新西兰/英国/美国/德国/瑞士</text>
+      </view>
+      <view class='intro'>
+        <text>符合以上条件的中国和印度公民可于去程过境或返程过境时申请 96 小时免签证转机服务(VFTF)，可以选择去程或返程申请VFTF, 但不能来回都申请。</text>
+      </view>
+    </view>
+  </block>
+  <block wx:elif='{{choose==2}}'>
+    <view class='content'>
+      <text class='smtitle text-bold'>国内有20个城市可快捷办理新加坡签证</text>
+      <view class='intro'>这20个城市的公民办理签出2年有效期签证的概率更大
+      </view>
+      <view class='intro'>这20个城市是：北京、天津、哈尔滨、沈阳、大连、济南、青岛、上海、南京、无锡、苏州、杭州、福州、厦门、成都、昆明、西安、重庆、广州、深圳。
+      </view>
+      <view class='intro smtitle'>想要快速办理签证可以寻找淘宝店家，有许多代办签证的商家~
+      </view>
+    </view>
+  </block>
+  <block wx:elif='{{choose==1}}'>
+    <view class='content'>
+      <text class='smtitle'>一.护照</text>
+      <view class='intro'>
+          <text>护照原件及护照照片页复印件。</text>
+      </view>
+       <view class='intro'>
+          <text>护照有效期应在六个月以上（从入境日期开始计算），并至少有一张空白签证页。</text>
+      </view>
+
+      <text class='smtitle'>2. Form 14A 签证申请表格（原件）</text>
+      <view class='intro'>
+        用英文填写完整，并有申请者亲笔签名的申请表格。
+      </view>
+
+      <text class='smtitle'>3. 彩色照片</text>
+      <view class='intro'>
+        两张（一张贴在表格上，另一张供扫描用）。
+      </view>
+      <text class='smtitle'>4. 身份证</text>
+      <view class='intro'>
+        复印件。（注：申请商务签证者，只需复印件）。
+      </view>
+
+       <text class='smtitle'>5. 户口本</text>
+      <view class='intro'>
+        申请者户口本整本复印件（如为集体户口，可提供原件及复印件或在警察局办理户籍证明）。
+      </view>
+
+       <text class='smtitle'>6. 在职证明</text>
+      <view class='intro'>
+        申请人若为在职员工，必须提供由就职公司出具的在职证明信原件一份。证明信中需注明公司同意其休假，并详细注明申请者在该公司任职时间、职务及工资。
+      </view>
+
+      
+       <text class='smtitle'>7. 能够在新加坡停留的时间</text>
+      <view class='intro'>
+       签证有效期内，每次入境，一般是30天停留时间，极少时也会有14天出现，记得查看自己入境卡上面的章上面有可以停留的天数。
+      </view>
+
+       <view class='intro'>
+        <text class='text-bold'>注意：</text>
+        <text>如果你是多次往返新加坡的签证，则可以第一次进入新加坡后，在30天还没到之前，出境去新加坡周边国家过一晚，再回新加坡，又会重新多获得30天停留时间。
+</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='content'>
+      <view class='intro'>
+          <text>1. 申请者</text>
+          <text class='text-bold'>年龄，职位，户籍，婚姻状况，来新加坡目的，近期往返新加坡次数，当前新加坡游客数</text>
+          <text>等因素可能影响申请概率；</text>
+      </view>
+       <view class='intro'>
+          <text>2. 一般情况下，</text>
+          <text class='text-bold'>年轻单身女性申请者、离异、近期往返新加坡次数过多者</text>
+          <text>的被拒概率会稍高。</text>
+      </view>
+    </view>
+  </block>
+</view>
+

@@ -1,0 +1,96 @@
+/* pages/contact/contact.wxss */
+page{
+  background: #eee
+}
+
+.header{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.logo-text{
+  font-size: 55rpx;
+  font-weight: 600;
+  color: #4F4F4F;
+}
+
+.search{
+  width: 88%;
+  margin-top: 20rpx;
+  height: 70rpx;
+  background: #EDEDED;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.search-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.limit{
+  width: 20rpx;
+  height: 40rpx;
+}
+
+.search-input{
+  flex-grow: 1;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.search-tip{
+  color:  #8a8a8a;
+  font-size: 30rpx;
+}
+
+.phoneItem{
+  width:100%;
+  background: #fff;
+}
+
+.title{
+  display: block;
+  width: 100%;
+  background: #eee;
+  margin-top: 12rpx;
+}
+
+.title-text{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  color: #3B3B3B;
+  font-weight: 500;
+}
+
+.number{
+  font-size: 32rpx;
+  font-family: consolas;
+  color: rgb(52, 168, 217);
+}
+
+.info-item{
+  width: calc(100% - 20rpx);
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 0 0 30rpx;
+  border-bottom: solid 1px #eee;
+  box-sizing: border-box;
+}
+
+.info-item:active{
+  background: #878787;
+}
+
+.phone-name{
+  font-size: 36rpx;
+  color: #595959;
+}

@@ -1,0 +1,26 @@
+<!--pages/subway/subway.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#fff"></nav-bar>
+<view class='container' style='margin-top: {{height}}px'>
+  <view class='search' style='margin-top:40rpx'>
+    <input placeholder='输入想要查找的站点名' bindinput='bindinput' class='search-input' placeholder-class='tips'></input>
+  </view>
+  <view class='filterList' wx:if='{{!search}}'>
+    <view class='filterDetail' wx:for="{{filterList}}" wx:key="{{}}" style='background:{{item.color}};' data-line='{{index}}' bindtap='bindFilter'>
+      <text>{{item.line}}</text>
+      <view class='line' style='background:{{item.color}}' wx:if="{{filterIndex==index}}"></view>
+    </view>
+  </view>
+  <view class='subwayList' wx:if='{{!search}}'>
+    <text style='padding:15rpx;color:grey;font-size:25rpx'>{{filterList[filterIndex].name}}</text>
+    <view class='subway' wx:for="{{subwayList}}" wx:key="" bindtap='chooseMRT' data-id='{{item.nameId}}'  data-name='{{item.name}}'>
+      <text style='padding:15rpx;border-right:1rpx solid #eee;color:{{filterList[filterIndex].color}};width:80rpx'>{{item.code[0]}}</text>
+      <text style='padding:15rpx' space='nbsp'>{{item.name}}    {{item.cnname}}</text>
+    </view>
+  </view>
+  <view class='subwayList' wx:if='{{search}}'>
+    <view class='subway' wx:for="{{searchList}}" wx:key="" bindtap='chooseMRT' data-id='{{item.nameId}}'  data-name='{{item.name}}'>
+      <text style='padding:15rpx;border-right:1rpx solid #eee;color:{{filterList[filterIndex].color}};width:80rpx'>{{item.code[0]}}</text>
+      <text style='padding:15rpx' space='nbsp'>{{item.name}}    {{item.cnname}}</text>
+    </view>
+  </view>
+</view>

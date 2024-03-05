@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#EDEDED"></nav-bar>
+<view class="container" style='margin-top: {{height}}px'>
+  <view class='header'>
+    <view class='head_content' wx:if='{{loadingWeather}}'>
+       <image src='../../imgs/loading.gif' mode='widthFix' style='width:300rpx'></image>
+    </view>
+    <view class='head_content' bindtap='weather' wx:else>
+      <image src='{{weather.forecast}}' class='logo-png'></image>
+      <text style="margin-top:30rpx">{{weather.cn}} {{weather.temperature.low+"~"+weather.temperature.high}}°C</text>
+      <text style="margin-top:10rpx">PSI指数{{weather.psi}}</text>
+    </view>
+     <view class='head_content' wx:if='{{loadingExchange}}'>
+       <image src='../../imgs/loading.gif' mode='widthFix' style='width:300rpx'></image>
+    </view>
+    <view class='head_content' wx:else bindtap='exchange'>
+      <image src='../../imgs/huilv.png' class='logo-png'></image>
+      <text style="margin-top:30rpx">1新币={{ rmb }}人民币</text>
+      <text style="margin-top:10rpx">1人民币={{ sgd }}新币</text>
+    </view>
+  </view>
+  <view class='toolBox'>
+    <text style='color:grey'>工具箱</text>
+    <view class='toolList'>
+      <view wx:for="{{tools}}" wx:key="" class='tools' bindtap='toPage' data-id="{{item.page}}">
+        <image src='{{item.img}}' mode='widthFix' style='width:{{index==1?"86rpx":"70rpx"}}'></image>
+        <text class='cn-title'>{{item.title}}</text>
+        <text class='en-title'>{{item.subtitle}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='bottom-line' bindtap='toFb'>
+      <text class='qa-text'>您觉得在新加坡生活还需要哪些工具？欢迎点这提出建议~ </text>
+      <text class='qa-text'>我们专注于为新加坡生活的你我他打造最有用的微信小工具</text>
+  </view>
+  <view class='blank'></view>
+</view>
+
+<view class='tips-view' hidden="{{!show_tip}}" style="top: {{2 * height}}rpx">
+  <view class='tips-wrapper'>
+    <view class='step'>
+      <view class='tu'></view>
+      <view class='desc'>
+        <text>点击这里分享给好友</text>
+      </view>
+    </view>
+    <view class='step'>
+      <view class='tu right'></view>
+      <view class='desc'>
+        <text>点击「添加小程序」\n下次访问更便捷</text>
+      </view>
+    </view>
+    <!-- <view class="box"> 
+      <view class='arrow'></view> 
+      <view class='body'> 
+        <text>点击「添加小程序」\n下次访问更便捷</text> 
+      </view> 
+    </view>  -->
+  </view>
+  <button class='know-btn' bindtap='iKnow'>我知道了</button>
+</view>

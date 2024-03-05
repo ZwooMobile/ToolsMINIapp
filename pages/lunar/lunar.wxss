@@ -1,0 +1,430 @@
+/* pages/lunar/lunar.wxss */
+@import "../../components/datePicker/datePicker.wxss";
+
+ad {
+    margin-top: -10px;
+}
+
+.lunar_main_content {
+    background-color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.lunar_day_header {
+    position: relative;
+    height: 18px;
+    padding-top: 36rpx;
+    text-align: center;
+}
+
+.lunar_day_string {
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    color: #333;
+}
+
+.today_btn {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background-color: #d03f3f;
+    border-radius: 100%;
+    top: 32rpx;
+    right: 59px;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+}
+
+.day_select_content {
+    height: 46px;
+    margin: 40rpx 30rpx 0 30rpx;
+    justify-content: space-between;
+}
+
+.day_prev_select,.day_next_select {
+    flex: 0 1 auto;
+    width: 68rpx;
+    height: 128rpx;
+    /* background-image: url('http://bmob-cdn-7920.b0.upaiyun.com/2018/08/07/664404f740713dd0802be459475fba94.png'); */
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    background-size: 17px 32px;
+}
+
+.day_next_select {
+    /* background-image: url('http://bmob-cdn-7920.b0.upaiyun.com/2018/08/07/e0beb792408db6e08002b8647e293294.png'); */
+    background-position: 100% 50%;
+}
+
+.lunar_day {
+    font-size: 44px;
+    line-height: 46px;
+    color: #d03f3f;
+}
+
+.lunar_day_detail {
+    font-size: 15px;
+    line-height: 11px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #333;
+    margin-top: 50rpx;
+}
+
+.lunar_hl {
+    width: 100%;
+    height: 1px;
+    background-color: #f5f0e9;
+    margin-top: 30rpx;
+}
+
+.day_wrapper:last-child {
+    margin-bottom: 10px;
+}
+
+.day_inner_wrapper {
+    margin: 30rpx 30rpx 18rpx 30rpx;
+}
+
+.yi_content,.ji_content {
+    display: flex;
+    padding-left: 6px;
+    padding-right: 11px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.yi_content {
+    padding-bottom: 12rpx;
+}
+
+.ji_content {
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+
+.yi_icon,.ji_icon {
+    flex: none;
+    width: 21px;
+    height: 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 14px;
+    margin: 1px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.yi_icon {
+    background-color: #d03f3f;
+}
+
+.ji_icon {
+    background-color: #529671;
+}
+
+.yi_detail,.ji_detail {
+    flex: 0 1 620rpx;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: justify;
+    margin-left: 10px;
+    margin-top: -4px;
+}
+
+.yi_detail {
+    color: #d03f3f;
+}
+
+.ji_detail {
+    color: #529671;
+}
+
+.scyj_content {
+    height: 174rpx;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f5f0e9;
+}
+
+.scyj_tip {
+    width: 70rpx;
+    height: 76rpx;
+    flex: none;
+    margin: 49rpx 0 49rpx 20rpx;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.27;
+    color: #f9b90e;
+    box-sizing: border-box;
+}
+
+.scyj_list {
+    flex: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 30rpx 0 20rpx;
+}
+
+.scyj_item {
+    flex: none;
+    width: 15px;
+    height: 49px;
+}
+
+.scyj_item.now {
+    background-color: #fff;
+}
+
+.scyj_txt {
+    width: 30rpx;
+    font-size: 15px;
+    line-height: 1.27;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #333;
+}
+
+.scyj_item.now .scyj_txt {
+    color: #f9b90e;
+    font-weight: 600;
+}
+
+.day_lunar_info1 {
+    width: 100%;
+    height: 90rpx;
+    border-bottom: 1px solid #f5f0e9;
+    border-top: 1px solid #f5f0e9;
+}
+
+.zscontent,.cscontent,.wxcontent {
+    flex: auto;
+    height: 15px;
+    font-size: 0;
+    text-align: center;
+}
+
+.day_lunar_line1 {
+    flex: none;
+    width: 1px;
+    height: 46px;
+    background-color: #f5f0e9;
+}
+
+.wxcontent {
+    border-right: none;
+}
+
+.day_lunar_tip1,.day_lunar_txt1 {
+    display: inline-block;
+}
+
+.day_lunar_tip1 {
+    font-size: 15px;
+    height: 15px;
+    line-height: 15px;
+    color: #f9b90e;
+}
+
+.day_lunar_txt1 {
+    font-size: 15px;
+    height: 30rpx;
+    line-height: 30rpx;
+    color: #333;
+    padding-left: 20rpx;
+}
+
+.jccontent,.xxcontent {
+    flex: auto;
+    width: 120rpx;
+    min-width: 37px;
+    height: 304rpx;
+    text-align: center;
+}
+
+.day_lunar_tip2 {
+    width: 30rpx;
+    font-size: 15px;
+    line-height: 1.13;
+    color: #f9b90e;
+}
+
+.day_lunar_txt2 {
+    width: 30rpx;
+    font-size: 15px;
+    line-height: 1.26;
+    text-align: left;
+    color: #333;
+    padding-left: 12rpx;
+}
+
+.othercontent {
+    flex: auto;
+    height: 304rpx;
+    border-left: 1px solid #f5f0e9;
+    border-right: 1px solid #f5f0e9;
+}
+
+.othercontent_top {
+    height: 172rpx;
+}
+
+.othercontent_js,.othercontent_ts,.othercontent_xs {
+    width: 168rpx;
+    height: 172rpx;
+    text-align: center;
+}
+
+.othercontent_ts {
+    border-left: 1px solid #f5f0e9;
+    border-right: 1px solid #f5f0e9;
+}
+
+.day_lunar_tip3 {
+    font-size: 15px;
+    line-height: 1;
+    color: #f9b90e;
+    text-align: center;
+    margin: 30rpx auto 0 auto;
+}
+
+.day_lunar_txt3 {
+    font-size: 14px;
+    line-height: 15px;
+    color: #333;
+    margin: 4px auto 0;
+    text-align: center;
+}
+
+.othercontent_bottom {
+    width: 100%;
+    height: 130rpx;
+    text-align: center;
+    border-top: 1px solid #f5f0e9;
+}
+
+.day_lunar_tip4 {
+    font-size: 15px;
+    line-height: 1;
+    color: #f9b90e;
+    margin-top: 30rpx;
+}
+
+.day_lunar_txt4 {
+    font-size: 15px;
+    line-height: 1;
+    color: #333;
+    margin-top: 10px;
+}
+
+@media only screen and (max-device-width:360px),screen and (max-width:360px) {
+    .day_lunar_txt2 {
+        padding-left: 4px;
+    }
+
+    .othercontent_js,.othercontent_ts,.othercontent_xs {
+        width: 75px;
+    }
+
+    .day_lunar_txt1,.day_lunar_txt2,.day_lunar_txt3,.day_lunar_txt4 {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-device-width:320px),screen and (max-width:320px) {
+    .today_btn {
+        right: 49px;
+    }
+
+    .day_lunar_txt2 {
+        padding-left: 2px;
+    }
+
+    .othercontent_js,.othercontent_ts,.othercontent_xs {
+        width: 68px;
+    }
+
+    .day_lunar_txt1,.day_lunar_txt2,.day_lunar_txt3,.day_lunar_txt4 {
+        font-size: 12px;
+    }
+
+    .day_lunar_tip4 {
+        margin-top: 10px;
+    }
+
+    .day_lunar_txt4 {
+        width: 490r0px;
+        line-height: 18px;
+        margin-top: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lunar_day {
+        font-size: 47px;
+    }
+}
+
+.down-arrow {
+    height: 8rpx;
+    width: 16rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 255rpx;
+}
+
+.down-arrow image {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-device-width:320px),screen and (max-width:320px) {
+    .scyj_tip {
+        width: 76rpx;
+    }
+
+    .day_lunar_txt2,.day_lunar_txt2 {
+        padding-left: 6px;
+    }
+
+    .down-arrow {
+        right: 240rpx;
+        top: 48rpx;
+    }
+}
+
+@media only screen and (max-device-width:375px),screen and (max-width:375px) {
+    .lunar_main_content {
+        margin: 0 0 20px 0;
+    }
+
+    .bottomIphone6 {
+        width: 100%;
+        height: 15px;
+        background-color: #f6f6f6;
+    }
+}
+
+.bottom_btn{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #eee
+}
+.tab_img{
+  width: 28px;
+  height: 28px
+}
+.align{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}

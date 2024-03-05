@@ -1,0 +1,110 @@
+<!--pages/calendar/calendar.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="white"></nav-bar>
+<guide></guide>
+ <!-- <image src='data:image/png;base64,{{src2}}'></image> -->
+  <include src="../../components/datePicker/datePicker.wxml"></include>
+  <scroll-view bindscroll="topViewScrollEvent" class="top_scroll full" scrollTop="{{topScrollNum}}" scrollY="true">
+      <view class="month_view_hd" style="top: {{height + 8}}px">
+          <view class="month_select_content">
+              <view bindtap="prevMonthTap" class="month_select_left"></view>
+              <view bindtap="dateSelectTap" class="date_month"><text>{{currentDateString}}</text></view>
+              <view bindtap="nextMonthTap" class="month_select_right"></view>
+              <image class="arrowIcon" src="../../imgs/selecttime-icon@3x.png"></image>
+              <view bindtap="todayTap" class="today_btn" style="display:{{todayDisaply}}">
+                  <view class="today_inner">今</view>
+              </view>
+          </view>
+          <view bindtap="yjToggleBtn" class="yjBtn">{{yjBtnTxt}}</view>
+      </view>
+      <scroll-view scrollX class="yjList {{animationClass}}" style="width: 100%;margin-top:{{animationClass ? height + 50 : ''}}px">
+          <view class="yjListInner flex_row" style="width: {{yjListWidth}}">
+              <view bindtap="yjSelectTap" class="yjSelect {{yjTxtStatus[index]}}" data-index="{{index}}" id="yjSelect{{index}}" style="width:{{item.length*16+22}}px" wx:for="{{yjTxtList}}" wx:key="*this">{{item}}</view>
+          </view>
+      </scroll-view>
+      <view class="month_view">
+          <view bindtouchend="monthTouchEnd" bindtouchmove="monthTouchMove" bindtouchstart="monthTouchStart" class="singleShowMonthList" style="opacity:{{singleMonthDisplay}};top:{{height + 5}}px">
+              <view class="week_view flex_row" style="width:{{monthViewWidth}}px;">
+                  <view class="week_view_item flex_row_stretch weekend">日</view>
+                  <view class="week_view_item flex_row_stretch">一</view>
+                  <view class="week_view_item flex_row_stretch">二</view>
+                  <view class="week_view_item flex_row_stretch">三</view>
+                  <view class="week_view_item flex_row_stretch">四</view>
+                  <view class="week_view_item flex_row_stretch">五</view>
+                  <view class="week_view_item flex_row_stretch weekend">六</view>
+              </view>
+              <view class="month_list flex_row" style="width:{{monthViewWidth}}px;height:{{singleMonthDayObj.monthViewHeight}}px;top:{{singleMonthDayObj.monthViewTop}}px;">
+                  <view bindtap="monthItemTap" class="month_item flex_row_fix {{item.monthClass}}" data-day="{{item.day}}" data-month="{{item.month}}" data-year="{{item.year}}" style="width:{{item.width}}px;height:{{item.height}}px;margin-bottom:{{item.monthItemMarginBottom}}px;" wx:for="{{singleMonthDayObj.monthDayList}}" wx:key="{{index}}">
+                      <view class="day_wrapper">
+                          <view class="vacation_icon {{item.vacationClass}}">{{item.vacationClass=='ban'?'班':'休'}}</view>
+                          
+                          <view class="day_num">{{item.index}}</view>
+                          <view class="day_lunar {{fontLowClass}}">{{item.lunarDay}}</view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+          <view animation="{{monthAnimation}}" class="month_view_content" style="top:{{height + 5}}px;opacity:{{monthViewDisplay}};width:{{screenWidth*3}}px;">
+              <view class="slide_month_view" style="width:{{screenWidth}}px;" wx:for="{{monthList}}" wx:for-item="monthInfo" wx:key="{{index}}">
+                  <view class="week_view flex_row" style="width:{{monthViewWidth}}px;">
+                      <view class="week_view_item flex_row_stretch weekend">日</view>
+                      <view class="week_view_item flex_row_stretch">一</view>
+                      <view class="week_view_item flex_row_stretch">二</view>
+                      <view class="week_view_item flex_row_stretch">三</view>
+                      <view class="week_view_item flex_row_stretch">四</view>
+                      <view class="week_view_item flex_row_stretch">五</view>
+                      <view class="week_view_item flex_row_stretch weekend">六</view>
+                  </view>
+                  <view class="month_list flex_row" style="width:{{monthViewWidth}}px;height:{{monthInfo.monthViewHeight}}px;top:{{monthInfo.monthViewTop}}px;">
+                      <view class="month_item flex_row_fix {{item.monthClass}}" style="width:{{item.width}}px;height:{{item.height}}px;margin-bottom:{{item.monthItemMarginBottom}}px;" wx:for="{{monthInfo.monthDayList}}" wx:key="{{index}}">
+                          <view class="day_wrapper">
+                              <view class="day_num">{{item.index}}</view>
+                              <view class="day_lunar {{fontLowClass}}">{{item.lunarDay}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+
+      <view bindtap="dayViewTap" class="day_view" data-day="{{dayViewObj.day}}" data-month="{{dayViewObj.month}}" data-year="{{dayViewObj.year}}">
+          <view class="day_detail_info flex_row">
+              <view class="day_detail_num">{{dayViewObj.day}}</view>
+              <view class="lunar_day_info">
+                  <view class="lunar_day_detail">{{dayViewObj.lunarDayDetail}}</view>
+                  <view class="lunar_date">{{dayViewObj.lunarDate}}</view>
+              </view>
+              <view class="day_detail_icon"></view>
+          </view>
+          <view class="festival_content flex_row" wx:if="{{dayViewObj.festivalDisplay}}">
+              <view class="festival_content_icon">节</view>
+              <view class="festival_detail">{{dayViewObj.jiejiari}}</view>
+          </view>
+          <view class="yi_content flex_row">
+              <view class="yi_icon">宜</view>
+              <view class="yi_detail">{{dayViewObj.yi}}</view>
+          </view>
+          <view class="ji_content flex_row">
+              <view class="ji_icon">忌</view>
+              <view class="ji_detail">{{dayViewObj.ji}}</view>
+          </view>
+      </view>
+      
+  </scroll-view>
+  <view style='width:100%;height:60px'></view>
+
+<view class='bottom_btn'>
+  <view class='align'>
+    <image class='tab_img' src='../../imgs/tab_wnl.png'></image>
+    <view style='font-size:10px;color:gray;padding:5rpx'>万年历</view>
+  </view>
+  <navigator url='../lunar/lunar' class='align' open-type="redirect">
+    <image class='tab_img' src='../../imgs/tab_hl.png'></image>
+    <view style='font-size:10px;color:gray;padding:5rpx'>黄历</view>
+  </navigator>
+  <navigator url='../festival/festival' class='align' open-type="redirect">
+    <image class='tab_img' src='../../imgs/tab_jr.png'></image>
+    <view style='font-size:10px;color:gray;padding:5rpx'>节日</view>
+  </navigator>
+</view>
+
+

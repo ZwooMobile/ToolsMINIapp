@@ -1,0 +1,26 @@
+/* pages/instruction/instruction.wxss */
+.list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.box{
+  width:50%;
+  border: 1rpx solid #eee;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-size: 35rpx;
+  padding: 15rpx;
+  height: 480rpx;
+}
+.box-img{
+  width: 100%;
+}
+.title{
+  margin:15rpx 0;
+  font-weight: bold;
+}
+.content{
+  font-size: 25rpx;
+}

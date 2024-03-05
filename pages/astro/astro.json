@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "星座",
+    "usingComponents": {
+      "nav-bar": "/components/navbar/navbar",
+      "guide": "/components/guide/guide",
+      "star-level": "/components/starLevel/starLevel"
+    }
+}

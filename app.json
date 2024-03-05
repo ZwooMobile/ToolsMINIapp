@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/allStar/allStar",
+    "pages/astro/astro",
+    "pages/visa/visa",
+    "pages/subway/MRT",
+    "pages/subway/subway",
+    "pages/exchange/exchange",
+    "pages/calendar/calendar",   
+    "pages/festival/festival",
+    "pages/lunar/lunar",
+    "pages/contact/contact",
+    "pages/bus/bus",
+    "pages/busItem/busItem",
+    "pages/promo/promo",
+    "pages/promo_result/promo_result",
+    "pages/feedback/feedback",
+    "pages/instruction/instruction",
+    "pages/trafficImage/trafficImage",
+    "pages/visaDetail/visaDetail",
+    "pages/visaSin/visaSin",
+    "pages/pr/pr",
+    "pages/study/study"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于查看附近公交车功能"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "狮城百宝箱",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": ["wx82e96075b0aa72d0"]
+}

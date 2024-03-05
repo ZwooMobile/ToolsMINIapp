@@ -1,0 +1,87 @@
+<!--pages/subway/MRT.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#0066CC" text-color="white" theme="w"></nav-bar>
+<guide></guide>
+<view class='container'>
+  <!-- 起始站搜索栏 -->
+  <view class='inputList' style='margin-top: {{height}}px'>
+    <view class='input'>
+      <text style="padding:0 15rpx">从</text>
+      <input placeholder='请选择起点站' bindtap='start' value='{{start}}' placeholder-style="color:white"></input>
+    </view>
+    <view class='input'>
+      <text style="padding:0 15rpx">到</text>
+      <input placeholder='请选择终点站' bindtap='end' value='{{end}}' placeholder-style="color:white"></input>
+    </view>
+  </view>
+  <!-- 交换按钮 -->
+  <image src='../../imgs/exchange.png' mode='widthFix' class='change' bindtap='change' style="top: {{height*2 + 110}}rpx"></image>
+  <!-- route -->
+  <view wx:if='{{showRoute}}'>
+    <text class='rowLine' style='font-size:30rpx'>{{route.time}}分钟·路程{{route.distance}}km</text>
+    <!-- 路线line -->
+    <view class='rowLine' style='font-size:30rpx'  >
+      <view wx:for='{{route.towardList}}' wx:key=''>
+        <text style='color:#fff;padding:0 5rpx;margin-right:15rpx;font-size:30rpx;width:60rpx;text-align:center;background:{{item=="EW"?"#339933":item=="NS"?"#CC3333":item=="NE"?"#663399":item=="CC"?"#FF9933":item=="DT"?"#336699":"#999999"}}'>{{item}}</text>
+        <text wx:if="{{ index != route.towardList.length - 1 }}" space='nbsp'>> </text>
+      </view>
+    </view>
+    <!-- 起点 -->
+    <view class='rowLine' style='background:#eee'>
+      <image src='../../imgs/circle.png' style='height:35rpx;width:35rpx;padding-right:30rpx'></image>
+      <text style='font-size:30rpx'>起点</text>
+      <text style='font-weight:bold'>{{start}}</text>
+    </view>
+    <!-- 路线列表 -->
+    <view class='routeList'>
+      <!-- 分段 -->
+      <view class='station' wx:for='{{route.route}}' wx:for-item='part' wx:key='' style='position:relative;left:30rpx;border-left:30rpx solid {{part[1].color=="EW"?"#339933":part[1].color=="NS"?"#CC3333":part[1].color=="NE"?"#663399":part[1].color=="CC"?"#FF9933":part[1].color=="DT"?"#336699":"#999999"}}'> 
+        <block  wx:if='{{part.length-1<4}}'>
+          <view wx:for='{{part}}' wx:for-item='station'  wx:key='' wx:for-index='n_index'>
+            <!-- 如果是每段的第一个 -->
+            <view class='rowLine'  style="font-size:30rpx;padding-left:15rpx" wx:if='{{n_index==0}}'>
+              <text style='width:60rpx;margin-right:15rpx;text-align:center;color:white;background:{{station.color=="EW"?"#339933":station.color=="NS"?"#CC3333":station.color=="NE"?"#663399":station.color=="CC"?"#FF9933":station.color=="DT"?"#336699":"#999999"}}'>{{station.color}}</text>
+              <text style='font-weight:bold'>{{station.name}}</text>
+              <!-- <text style='font-size:30rpx;color:grey'>></text> -->
+            </view>
+            <!-- 排除第一个 -->
+            <view class='rowLine' style="font-size:30rpx;padding-left:15rpx" wx:else>
+              <text >{{station.name}}({{station.time}}min)</text>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+            <!-- 如果是每段的第一个 -->
+            <view class='rowLine'  style="font-size:30rpx;padding-left:15rpx" >
+              <text style='margin-right:15rpx;width:60rpx;text-align:center;color:white;background:{{part[0].color=="EW"?"#339933":part[0].color=="NS"?"#CC3333":part[0].color=="NE"?"#663399":part[0].color=="CC"?"#FF9933":part[0].color=="DT"?"#336699":"#999999"}}'>{{part[0].color}}</text>
+              <text style='font-weight:bold'>{{part[0].name}}</text>
+              <!-- <text style='font-size:30rpx;color:grey'>></text> -->
+            </view>
+            <!-- 排除第一个 -->
+            <view class='rowLine' style="font-size:30rpx;padding-left:15rpx">
+              <text bindtap='showStation' wx:if='{{!showStation}}' style='color:blue'>{{part.length}}站</text>
+
+
+
+              <view wx:if='{{showStation}}'  class='colLine' style='flex-diretion:column'>
+                <text wx:for='{{part}}' wx:for-item='station'>{{station.name}}({{station.time}}min)</text>
+              </view>
+
+
+              
+            </view>
+        </block>
+   
+      </view>
+    </view>
+    <view class='rowLine' style='background:#eee'>
+      <image src='../../imgs/circle.png' style='height:35rpx;width:35rpx;padding-right:30rpx'></image>
+      <text style='font-size:30rpx'>终点</text>
+      <text style='font-weight:bold'>{{end}}</text>
+    </view>
+  </view>
+  <!-- 地图 -->
+  <text style='padding:15rpx;font-size:30rpx'>{{notification}}</text>
+  <image src='../../imgs/map.png' style='width:100%;margin-top:50rpx' mode='widthFix' bindtap='showimage' wx:if="{{showmap}}"></image>
+  <text>（点击图片查看大图)</text>
+</view>
+

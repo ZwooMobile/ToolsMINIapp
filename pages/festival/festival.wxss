@@ -1,0 +1,156 @@
+/* pages/festival/festival.wxss */
+
+.festival_list_content {
+    margin: 7px 7px 10px;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+.festival_section {
+    margin: 0 13px;
+    height: 49px;
+    line-height: 49px;
+    font-size: 17px;
+    color: #333333;
+    text-indent: 26px;
+    position: relative;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.festival_section:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 50px;
+    /* -webkit-mask-image: url('http://bmob-cdn-7920.b0.upaiyun.com/2018/08/07/9c4d3e6840fda979808874324327a8de.png'); */
+    -webkit-mask-size: 15px 15px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    background-color: #34a8d9;
+}
+
+
+
+.festival_section.hot_section {
+    border-bottom: none;
+}
+
+
+.festival_section:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 9px;
+    height: 50px;
+    /* -webkit-mask-image: url('http://bmob-cdn-7920.b0.upaiyun.com/2018/08/07/3606717740689e94809852776dd52bf6.png'); */
+    -webkit-mask-size: 9px 4px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    /* background-color: #666666; */
+}
+
+.festival_section.active:after {
+    transform: rotateZ(180deg);
+}
+
+.festival_list {
+    margin-right: 13px;
+    height: 0;
+    overflow: hidden;
+    transition-property: height;
+    transition-timing-function: ease;
+    transition-delay: 0;
+}
+
+.section_line {
+    width: 100%;
+    height: 1px;
+    margin-left: 13px;
+    background-color: #eaeaea;
+}
+
+.festival_list.local_list {
+    transition-duration: 0.3s;
+}
+
+.festival_list.jiejiari_list {
+    transition-duration: 0.4s;
+}
+
+.festival_list.term_list {
+    transition-duration: 0.5s;
+}
+
+.festival_list.hot_list {
+    transition-duration: 0.6s;
+}
+
+.festival_item {
+    margin-left: 39px;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.festivel_info {
+    flex: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-align: left;
+}
+
+.festivel_name {
+    font-size: 17px;
+    line-height: 18px;
+    color: #333333;
+}
+
+.festivel_date {
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 1;
+    color: #777777;
+}
+
+.festivel_days {
+    flex: none;
+    margin-right: 2px;
+    text-align: right;
+    font-size: 17px;
+    color: #333333;
+}
+
+
+
+.bottom_btn{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #eee
+}
+.tab_img{
+  width: 28px;
+  height: 28px
+}
+.align{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}

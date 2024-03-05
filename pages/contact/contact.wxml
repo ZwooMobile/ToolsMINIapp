@@ -1,0 +1,19 @@
+<!--pages/contact/contact.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#fff"></nav-bar>
+<guide></guide>
+<view class='header' style='margin-top: {{height}}px'>
+  <text class='logo-text'>常用电话簿</text>
+  <view class='search'>
+    <image src='../../imgs/search.png' class='search-img'></image>
+    <view class='limit'></view>
+    <input placeholder='Search' placeholder-class='search-tip' class='search-input' bindinput='search'></input>
+  </view>
+</view>
+<view class='phoneItem' wx:for='{{telNumList}}' wx:for-item="block" wx:key='Ind' wx:for-index='Ind'>
+  <view class='title'>
+    <text class='title-text'>{{block.title}}</text>
+  </view>
+  <view wx:for='{{block.content}}' wx:key="number" class='info-item' bindtap='call' data-id="{{item.number[0]}}">
+    <text class='phone-name'>{{item.name}}</text>
+  </view>
+</view>

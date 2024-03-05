@@ -1,0 +1,12 @@
+<!--components/guide.wxml-->
+<view class='tips-view' style="top: {{2 * height}}rpx" hidden='{{isHidden}}'>
+  <view class='tips-wrapper'>
+    <view class='step'>
+      <view class='tu' style='margin-left: {{share ? "100" : "160"}}rpx'></view>
+      <view class='desc'>
+        <text>觉得实用就点这里分享吧</text>
+      </view>
+    </view>
+  </view>
+  <button class='know-btn' bindtap='iKnow'>我知道了</button>
+</view>

@@ -1,0 +1,26 @@
+<!--components/navbar.wxml-->
+<view class='nav-wrap' style='height: {{height*2 + 20}}px;background: {{bgColor}};color: white'>
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;color: {{textColor}}'>
+    <text>{{navbarData.title}}</text>
+  </view>
+  <view style='display: flex; justify-content: space-around;flex-direction: column'>
+    <view class='nav-capsule' style='height: {{height*2 + 44}}px;' wx:if='{{navbarData.showCapsule}}'>
+      <view bindtap='_navback' wx:if='{{!share && !navbarData.isHome}}'>
+        <image src='/imgs/back.png' mode='aspectFill' class='back-pre' wx:if="{{theme == 'd'}}"></image>
+        <image src='/imgs/back2.png' mode='aspectFill' class='back-pre' wx:else></image>
+      </view>
+      <view class='navbar-v-line' wx:if='{{!share && !navbarData.isHome}}'></view>
+      <view bindtap='_backhome' wx:if="{{!navbarData.isHome}}">
+        <image src='/imgs/home.png' mode='aspectFill' class='back-home' wx:if="{{theme == 'd'}}"></image>
+        <image src='/imgs/home2.png' mode='aspectFill' class='back-home' wx:else></image>
+      </view>
+      <view class='navbar-v-line' wx:if="{{!navbarData.isHome}}"></view>
+      <view>
+        <button open-type='share'>
+          <image src='/imgs/share.png' mode='aspectFill' class='back-home' wx:if="{{theme == 'd'}}"></image>
+          <image src='/imgs/share2.png' mode='aspectFill' class='back-home' wx:else></image>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

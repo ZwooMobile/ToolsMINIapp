@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navbar/navbar"
+  },
+  "navigationBarTitleText": "黄历",
+  "navigationBarBackgroundColor": "#fff"
+}

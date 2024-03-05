@@ -1,0 +1,10 @@
+<!--pages/instruction/instruction.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="#EDEDED"></nav-bar>
+<guide></guide>
+<view class='container list' style='margin-top: {{height}}px'>
+  <view class='box' wx:for='{{list}}' wx:key="index">
+    <image src='{{item.image}}' class='box-img' mode='widthFix'></image>
+    <text class='title'>{{item.title}}</text>
+    <text class='content'>{{item.content}}</text>
+  </view>
+</view>

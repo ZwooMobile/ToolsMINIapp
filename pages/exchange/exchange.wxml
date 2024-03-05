@@ -1,0 +1,23 @@
+<!--pages/exchange/exchange.wxml-->
+<guide></guide>
+<nav-bar navbar-data='{{navbarData}}' bg-color="#0066CC" text-color="white" theme='w'></nav-bar>
+<view class='container' style='margin-top: {{height}}px'>
+  <text class="heads">今日汇率：{{percent}}</text>
+  <text style='margin:15rpx'>换汇计算器</text>
+  <view class='line'>
+    <image src='../../imgs/singapore.png' style='width:75rpx;border-radius:50%' mode='widthFix'></image>
+    <text style="padding:15rpx;width:150rpx">SGD</text>
+    S$<input placeholder='{{baseSGD}}' type="digit" class='input-bg'
+    bindfocus="touchSGD" bindinput='inputSGD' value="{{SGDVal}}"></input>
+  </view>
+  <view class='line'>
+    <image src='../../imgs/china.png' style='width:75rpx;border-radius:50%' mode='widthFix'></image>
+    <text style="padding:15rpx;width:150rpx">CNY</text>
+    ￥<input placeholder='{{baseRMB}}' type="digit" class='input-bg'
+    bindfocus="touchRMB" bindinput='inputRMB' value="{{RMBVal}}"></input>
+  </view>
+  <view class='canvas_view'>
+    <canvas canvas-id='lineCanvas'></canvas>
+  </view>
+  <text class='tips'>数据来源第三方接口,与当地换汇机构汇率可能会有差额</text>
+</view>

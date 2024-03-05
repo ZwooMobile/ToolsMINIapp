@@ -1,0 +1,9 @@
+<!--pages/visa/visa.wxml-->
+<nav-bar navbar-data='{{navbarData}}' bg-color="rgb(216, 94, 94)" text-color="white" theme='w'></nav-bar>
+<view class='container list' style='margin-top: {{height}}px'>
+  <view class='box' wx:for='{{list}}' wx:key="index" bindtap='jump' data-idx='{{index}}'>
+    <image src='{{item.image}}' class='box-img' mode='widthFix'></image>
+    <text class='title'>{{item.title}}</text>
+    <text class='content'>{{item.content}}</text>
+  </view>
+</view>
