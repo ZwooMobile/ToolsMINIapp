@@ -32,7 +32,7 @@ Page({
         let lat = res.latitude;
         let lng = res.longitude;
         //lat: 1.3884141666958, lng: 103.9897163888532
-        myhttp.get("api/busList", { lat, lng}).then(res => {
+        myhttp.get("api/tool/busList", { lat, lng}).then(res => {
           this.setData({ loading : false })
           res.data.forEach(r => r.distance = r.distance.toFixed(2))
           let roadList = util.getNearByStation(res.data, lat, lng);
@@ -54,7 +54,7 @@ Page({
         this.setData({ roadList })
       })
     }else{
-      this.getNearList(); 
+      this.getNearList();
     }
   },
 

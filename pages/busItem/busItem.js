@@ -10,12 +10,12 @@ Page({
   data: {
     // 组件所需的参数
     nvabarData: {
-      showCapsule: 1, 
-      title: '站点详情', 
+      showCapsule: 1,
+      title: '站点详情',
     },
-    height: app.globalData.height * 2 + 20,   
+    height: app.globalData.height * 2 + 20,
     lat : '',
-    lon : '', 
+    lon : '',
     stop : '',
     busList : [],
     currentId : '',
@@ -64,7 +64,8 @@ Page({
   },
 
   getNowInfo(id,isRefresh = false){
-    myhttp.get(`api/BusDetail/${id}`).then(res => {
+    myhttp.get(`api/tool/BusDetail/${id}`).then(res => {
+      debugger;
       let busList = this.getMintime(res.Services);
       this.setData({ busList, currentId: id })
       if(isRefresh){

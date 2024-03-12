@@ -9,10 +9,10 @@ Page({
    */
   data: {
     navbarData: {
-      showCapsule: 1, 
-      title: 'MRT', 
+      showCapsule: 1,
+      title: 'MRT',
     },
-    height: app.globalData.height * 2 + 20,   
+    height: app.globalData.height * 2 + 20,
     start:'',
     end:'',
     showRoute: false,
@@ -26,7 +26,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://tools.xiaojishida.net/api/mrtNotification',
+      url: app.globalData.base_url+'api/tool/mrtNotification',
       success: res => {
         console.log(res)
         if (res.data.results.length > 0){
@@ -82,7 +82,7 @@ Page({
     })
     var that = this
     wx.request({
-      url: 'https://tools.xiaojishida.net/api/getRoute',
+      url: app.globalData.base_url+'api/tool/getRoute',
       data:{
         start:this.data.startId,
         end:this.data.endId
@@ -102,10 +102,10 @@ Page({
         }
         for (var j = 0; j < routeList.length; j++) {
           time += routeList[j].time
-          distance +=routeList[j].distance
+          distance +=parseFloat(routeList[j].distance)
         }
         // console.log(time)
-     
+
 
         that.setData({
            showRoute:true,
@@ -129,7 +129,7 @@ Page({
 
   showimage(){
     wx.previewImage({
-      urls: ['https://tools.xiaojishida.net/media/imgs/maps.png'] // 需要预览的图片http链接列表
+      urls: ['https://www.fanshuyou.com/img/busway.jpg'] // 需要预览的图片http链接列表
     })
   },
   showStation(){
@@ -186,7 +186,7 @@ Page({
       item.nameId == a
     )[0]
   },
-  
+
 
 
   /**

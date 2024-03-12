@@ -10,7 +10,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        myhttp.post("user/WechatLogin",{ code : res.code }).then(res => {
+        myhttp.post("api/tool/WechatLogin",{ code : res.code }).then(res => {
           wx.setStorageSync('access_token', res.access_token)
         })
       }
@@ -63,5 +63,7 @@ App({
     userInfo: null,
     share: false,  // 分享默认为false
     height: 0,
+    // base_url:'https://38m8925n07.imdo.co/'
+    base_url:'https://api.gowhere.asia/'
   }
 })

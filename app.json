@@ -7,7 +7,7 @@
     "pages/subway/MRT",
     "pages/subway/subway",
     "pages/exchange/exchange",
-    "pages/calendar/calendar",   
+    "pages/calendar/calendar",
     "pages/festival/festival",
     "pages/lunar/lunar",
     "pages/contact/contact",
@@ -36,5 +36,6 @@
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
-  "navigateToMiniProgramAppIdList": ["wx82e96075b0aa72d0"]
+  "navigateToMiniProgramAppIdList": ["wx82e96075b0aa72d0"],
+  "requiredPrivateInfos":["getLocation"]
 }

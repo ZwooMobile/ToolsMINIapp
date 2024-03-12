@@ -26,19 +26,19 @@ Page({
         title: '地铁',
         subtitle: 'MRT',
         page:'subway/MRT'
-      }, 
+      },
       // {
       //   img: '../../imgs/tools/recharge.png',
       //   title: '手机充值',
       //   subtitle: 'Top up',
       //   jump:'recharge',
-      // }, 
+      // },
       {
         img: '../../imgs/tools/contact.png',
         title: '常用号码本',
         subtitle: 'Contact',
         page: 'contact'
-      }, 
+      },
       // {
       //   img: '../../imgs/tools/4D.png',
       //   title: '万字票',
@@ -49,7 +49,7 @@ Page({
       //   title: '彩票',
       //   subtitle: 'TOTO',
       //   jump:'TOTO'
-      // }, 
+      // },
       {
         img: '../../imgs/tools/ticket.png',
         title: '特价门票',
@@ -61,7 +61,7 @@ Page({
       //   title: '餐饮团购',
       //   subtitle: 'Food',
       //   jump:'food'
-      // }, 
+      // },
       {
         img: '../../imgs/tools/calendar.png',
         title: '新加坡黄历',
@@ -78,37 +78,37 @@ Page({
       //   title: '机票促销',
       //   subtitle: 'Promotion',
       //   jump:'promo'
-      // }, 
-      {
-        img: '../../imgs/tools/video.png',
-        title: '实时路况',
-        subtitle: 'Traffic',
-        page: 'traffic'
-      },
-      {
-        img: '../../imgs/tools/constellation.png',
-        title: '星座运势',
-        subtitle: 'Constellation',
-        page: 'constellation'
-      },
-      {
-        img: '../../imgs/tools/pr.png',
-        title: '永久居民',
-        subtitle: 'PR',
-        page: 'pr'
-      },
+      // },
+      // {
+      //   img: '../../imgs/tools/video.png',
+      //   title: '实时路况',
+      //   subtitle: 'Traffic',
+      //   page: 'traffic'
+      // },
+      // {
+      //   img: '../../imgs/tools/constellation.png',
+      //   title: '星座运势',
+      //   subtitle: 'Constellation',
+      //   page: 'constellation'
+      // },
+      // {
+      //   img: '../../imgs/tools/pr.png',
+      //   title: '永久居民',
+      //   subtitle: 'PR',
+      //   page: 'pr'
+      // },
       {
         img: '../../imgs/tools/visa.png',
         title: '签证',
         subtitle: 'Visa',
         page: 'visa'
       },
-      {
-        img: '../../imgs/tools/study.png',
-        title: '留学须知',
-        subtitle: 'Study Abroad',
-        page: 'study'
-      }
+      // {
+      //   img: '../../imgs/tools/study.png',
+      //   title: '留学须知',
+      //   subtitle: 'Study Abroad',
+      //   page: 'study'
+      // }
     ],
     weather:{},
     loadingWeather:true,
@@ -151,27 +151,30 @@ Page({
   getWeather(){
     var that=this
     wx.request({
-      url: 'https://tools.xiaojishida.net/api/getWeather',
+      url: app.globalData.base_url+'api/tool/getWeather',
       success(res){
         console.log(res)
         var weather=res.data
         //中文天气
         weather.cn = util.getWeatherCN(weather.forecast);
-        weather.forecast = "https://tools.xiaojishida.net/media/weather/" + util.getWeatherEN(weather.forecast) + ".png" 
+        weather.forecast = app.globalData.base_url+"weather/" + util.getWeatherEN(weather.forecast) + ".png"
         that.setData({
           weather: weather,
-          loadingWeather:false 
+          loadingWeather:false
         })
       }
     })
   },
 
   getExchange(){
-    myhttp.get("api/getExchange").then(res => {
+    myhttp.get("api/tool/getExchange").then(res => {
       console.log(res);
-      let exchange = JSON.stringify(res.data)
-      let rmb = res.data[0].SGD2CNY.toFixed(2);
-      let sgd = res.data[0].CNY2SGD.toFixed(2);
+      // let exchange = JSON.stringify(res.data)
+      // let rmb = res.data[0].SGD2CNY.toFixed(2);
+      // let sgd = res.data[0].CNY2SGD.toFixed(2);
+      let exchange = JSON.stringify(res)
+      let rmb =parseFloat(res.SGD2CNY).toFixed(2);
+      let sgd =parseFloat(res.CNY2SGD).toFixed(2);
       this.setData({ rmb, sgd, exchange, loadingExchange: false })
     })
   },
@@ -187,7 +190,7 @@ Page({
     app.globalData.share = false
   },
   onUnload(){
-    
+
   },
   /**
    * 用户点击右上角分享
