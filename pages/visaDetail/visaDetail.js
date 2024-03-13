@@ -32,14 +32,14 @@ Page({
       this.setData({
         navbarData: navbarData,
         id: 1,
-        url:'https://tools.xiaojishida.net/blog/article/1'
+        url:''
       })
     } else if (id == 2) {
       navbarData.title = '港澳台等'
       this.setData({
         navbarData: navbarData,
         id: 2,
-        url: 'https://tools.xiaojishida.net/blog/article/2'
+        url: ''
       })
     }
     else if (id == 3) {
@@ -47,7 +47,7 @@ Page({
       this.setData({
         navbarData: navbarData,
         id: 3,
-        url: 'https://tools.xiaojishida.net/blog/article/3'
+        url: ''
       })
     }
     else if (id == 4) {
@@ -55,14 +55,14 @@ Page({
       this.setData({
         navbarData: navbarData,
         id: 4,
-        url: 'https://tools.xiaojishida.net/blog/article/4'
+        url: ''
       })
     } else if (id == 5) {
       navbarData.title = '澳大利亚等'
       this.setData({
         navbarData: navbarData,
         id: 5,
-        url: 'https://tools.xiaojishida.net/blog/article/5'
+        url: ''
       })
     }
   },

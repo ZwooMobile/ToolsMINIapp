@@ -13,11 +13,11 @@ Page({
     height: app.globalData.height * 2 + 20,
     list: [
       { image: 'imgs/sin.png', title: '新加坡签证', content: '中国居民办理新加坡签证' },
-      { image: 'imgs/nine.png', title: '东南亚9国签证', content: '中国居民办理东南亚九国签证' },
-      { image: 'imgs/gat.png', title: '新加坡前往港澳台...', content: '在新加坡申请港澳，台湾，日本，韩国，美国，加拿大旅游签证' },
-      { image: 'imgs/alabo.png', title: '新加坡前往阿拉伯...', content: '在新加坡办理印度和阿拉伯旅游签证' },
-      { image: 'imgs/eur.png', title: '新加坡前往欧洲', content: '新加坡申请申根签攻略，游遍欧洲25国！' },
-      { image: 'imgs/aus.png', title: '新加坡前往澳大利亚...', content: '在新加坡办理澳大利亚、英国、新西兰旅游签证' }
+      // { image: 'imgs/nine.png', title: '东南亚9国签证', content: '中国居民办理东南亚九国签证' },
+      // { image: 'imgs/gat.png', title: '新加坡前往港澳台...', content: '在新加坡申请港澳，台湾，日本，韩国，美国，加拿大旅游签证' },
+      // { image: 'imgs/alabo.png', title: '新加坡前往阿拉伯...', content: '在新加坡办理印度和阿拉伯旅游签证' },
+      // { image: 'imgs/eur.png', title: '新加坡前往欧洲', content: '新加坡申请申根签攻略，游遍欧洲25国！' },
+      // { image: 'imgs/aus.png', title: '新加坡前往澳大利亚...', content: '在新加坡办理澳大利亚、英国、新西兰旅游签证' }
     ]
   },
 

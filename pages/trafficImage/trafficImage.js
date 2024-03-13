@@ -7,7 +7,7 @@ Page({
    */
   data: {
     navbarData: {
-      showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示 
+      showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
       isHome: false,
       title: '实时路况', //导航栏 中间的标题
     },
@@ -19,15 +19,15 @@ Page({
         road: [
           {
             name: 'WOODLANDS CAUSEWAY – TOWARDS JOHOR',
-            url: 'https://api.trafficiti.com/node/woodland_to_johor'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/woodland_to_johor'
           },
           {
             name: 'WOODLANDS CHECKPOINT – TOWARDS BKE',
-            url: 'https://api.trafficiti.com/node/Woodland_to_BKE'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/Woodland_to_BKE'
           },
           {
             name: 'WOODLANDS FLYOVER – TOWARDS CHECKPOINT',
-            url: 'https://api.trafficiti.com/node/Woodlands_Flyover'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/Woodlands_Flyover'
           }
         ]
       },
@@ -36,15 +36,15 @@ Page({
         road: [
           {
             name: 'TUAS SECOND LINK',
-            url: 'https://api.trafficiti.com/node/Tuas_second_link'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/Tuas_second_link'
           },
           {
             name: 'TUAS CHECKPOINT',
-            url: 'https://api.trafficiti.com/node/Tuas_Checkpoint'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/Tuas_Checkpoint'
           },
           {
             name: 'AFTER TUAS WEST ROAD',
-            url: 'https://api.trafficiti.com/node/After_Tuas_West'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/After_Tuas_West'
           }
         ]
       },
@@ -53,7 +53,7 @@ Page({
         road: [
           {
             name: 'SECOND LINK MALAYSIA 1.3KM',
-            url: 'https://api.trafficiti.com/node/second_link_1.3'
+            url: 'https://odis.sgp1.digitaloceanspaces.com/node/second_link_1.3'
           }
         ]
       }
@@ -64,7 +64,7 @@ Page({
       'Second Link Checkpoint Area',
       'All'
     ],
-    imgList: [],  
+    imgList: [],
     index:0
   },
 

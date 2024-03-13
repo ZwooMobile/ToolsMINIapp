@@ -5,7 +5,7 @@
     <view class='head_content' wx:if='{{loadingWeather}}'>
        <image src='../../imgs/loading.gif' mode='widthFix' style='width:300rpx'></image>
     </view>
-    <view class='head_content' bindtap='weather' wx:else>
+    <view class='head_content'  wx:else>
       <image src='{{weather.forecast}}' class='logo-png'></image>
       <text style="margin-top:30rpx">{{weather.cn}} {{weather.temperature.low+"~"+weather.temperature.high}}°C</text>
       <text style="margin-top:10rpx">PSI指数{{weather.psi}}</text>
@@ -13,7 +13,7 @@
      <view class='head_content' wx:if='{{loadingExchange}}'>
        <image src='../../imgs/loading.gif' mode='widthFix' style='width:300rpx'></image>
     </view>
-    <view class='head_content' wx:else bindtap='exchange'>
+    <view class='head_content' wx:else >
       <image src='../../imgs/huilv.png' class='logo-png'></image>
       <text style="margin-top:30rpx">1新币={{ rmb }}人民币</text>
       <text style="margin-top:10rpx">1人民币={{ sgd }}新币</text>
@@ -51,11 +51,11 @@
         <text>点击「添加小程序」\n下次访问更便捷</text>
       </view>
     </view>
-    <!-- <view class="box"> 
-      <view class='arrow'></view> 
-      <view class='body'> 
-        <text>点击「添加小程序」\n下次访问更便捷</text> 
-      </view> 
+    <!-- <view class="box">
+      <view class='arrow'></view>
+      <view class='body'>
+        <text>点击「添加小程序」\n下次访问更便捷</text>
+      </view>
     </view>  -->
   </view>
   <button class='know-btn' bindtap='iKnow'>我知道了</button>

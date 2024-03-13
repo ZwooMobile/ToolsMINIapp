@@ -79,18 +79,18 @@ Page({
       //   subtitle: 'Promotion',
       //   jump:'promo'
       // },
-      // {
-      //   img: '../../imgs/tools/video.png',
-      //   title: '实时路况',
-      //   subtitle: 'Traffic',
-      //   page: 'traffic'
-      // },
-      // {
-      //   img: '../../imgs/tools/constellation.png',
-      //   title: '星座运势',
-      //   subtitle: 'Constellation',
-      //   page: 'constellation'
-      // },
+      {
+        img: '../../imgs/tools/video.png',
+        title: '实时路况',
+        subtitle: 'Traffic',
+        page: 'trafficImage'
+      },
+      {
+        img: '../../imgs/tools/constellation.png',
+        title: '星座运势',
+        subtitle: 'Constellation',
+        page: 'allStar'
+      },
       // {
       //   img: '../../imgs/tools/pr.png',
       //   title: '永久居民',
@@ -103,12 +103,12 @@ Page({
         subtitle: 'Visa',
         page: 'visa'
       },
-      // {
-      //   img: '../../imgs/tools/study.png',
-      //   title: '留学须知',
-      //   subtitle: 'Study Abroad',
-      //   page: 'study'
-      // }
+      {
+        img: '../../imgs/tools/study.png',
+        title: '留学须知',
+        subtitle: 'Study Abroad',
+        page: 'study'
+      }
     ],
     weather:{},
     loadingWeather:true,
@@ -173,8 +173,8 @@ Page({
       // let rmb = res.data[0].SGD2CNY.toFixed(2);
       // let sgd = res.data[0].CNY2SGD.toFixed(2);
       let exchange = JSON.stringify(res)
-      let rmb =parseFloat(res.SGD2CNY).toFixed(2);
-      let sgd =parseFloat(res.CNY2SGD).toFixed(2);
+      let rmb =res.SGD2CNY;
+      let sgd =res.CNY2SGD;
       this.setData({ rmb, sgd, exchange, loadingExchange: false })
     })
   },

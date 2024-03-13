@@ -1,2 +1,2 @@
 <!--pages/study/study.wxml-->
-<web-view src="https://tools.xiaojishida.net/blog/article/6"></web-view>
+<web-view src="{{url}}"></web-view>
